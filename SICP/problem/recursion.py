@@ -41,3 +41,17 @@ def stairs2(n: int, k: int) -> int:
 
 
 # 4
+def permutation(lst):
+    """Lists all permutation of the given list.
+
+    >>> permutation(['angie', 'cat'])
+    [['angie', 'cat'], ['cat', 'angie']]
+    >>> permutation([1, 2, 3])
+    [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+    """
+    if len(lst) <= 1:
+        return [lst]
+    total = []
+    for i, val in enumerate(lst):
+        total.extend([[val] + p for p in permutation(lst[:i] + lst[i + 1:])])
+    return total

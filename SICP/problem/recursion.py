@@ -55,3 +55,18 @@ def permutation(lst):
     for i, val in enumerate(lst):
         total.extend([[val] + p for p in permutation(lst[:i] + lst[i + 1:])])
     return total
+
+
+# 5
+def min_pie(pie):
+    """Given a tuple of numbers, where each number represents the size of a
+    slice of pie, distribute the slices among 2 people as evenly as possible.
+    (i.e., minimizing the difference between the sums of two sets of values)
+
+    >>> min_pie((1, 1, 1, 1))
+    [((1, 1), (1, 1))]
+    >>> min_pie((1, 1, 1, 1, 2, 3))
+    [((2, 1, 1), (3, 1, 1)), ((2, 1, 1, 1), (3, 1))]
+    >>> min_pie((1, 2, 3, 4, 5, 6))
+    [((5, 3, 2), (6, 4, 1)), ((5, 4, 2), (6, 3, 1)), ((5, 3, 2, 1), (6, 4)), ((5, 4, 1), (6, 3, 2))]
+    """

@@ -1,4 +1,4 @@
-#!/Users/quinn-sasha-kenta/work/SICP/sicpenv/bin/python3.12
+#!/Users/quinn-sasha-kenta/work/coding-interview-university/SICP/sicpenv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

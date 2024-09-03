@@ -1,3 +1,6 @@
+from typing import Callable, Union
+
+
 def double_eights(n):
     """Returns whether or not n has two digits in row that
     are the number 8. Assume n has at least two digits in it.
@@ -26,7 +29,7 @@ def double_eights(n):
     return double_eights(rest)
 
 
-def make_onion(f, g):
+def make_onion(f: Callable, g: Callable) -> Callable:
     """Return a function can_reach(x, y, limit) that returns
     whether some call expression containing only f, g, and x with
     up to limit calls will give the result y.
@@ -51,7 +54,7 @@ def make_onion(f, g):
     False
     """
 
-    def can_reach(x, y, limit):
+    def can_reach(x: Union[int, str], y: Union[int, str], limit: int) -> bool:
         if limit < 0:
             return False
         elif x == y:
@@ -62,7 +65,7 @@ def make_onion(f, g):
     return can_reach
 
 
-def mario_number(level):
+def mario_number(level: str) -> int:
     """Return the number of ways that Mario can perform a sequence of steps
     or jumps to reach the end of the level without ever landing in a Piranha
     plant. Assume that every level begins and ends with a space.
@@ -85,6 +88,11 @@ def mario_number(level):
     180
     """
     "*** YOUR CODE HERE ***"
+    if len(level) == 1 and level[0] == " ":
+        return 1
+    elif len(level) == 0 or level[0] == "P":
+        return 0
+    return mario_number(level[1:]) + mario_number(level[2:])
 
 
 def max_subseq(n, t):

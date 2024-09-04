@@ -23,3 +23,7 @@
 ## Product of Array Except Self
 
 - [answer](https://leetcode.com/problems/product-of-array-except-self/solutions/5666895/simple-solution-by-python/)
+
+## Major element
+
+- [answer](https://leetcode.com/problems/majority-element/solutions/5738559/hash-map-solution/)
